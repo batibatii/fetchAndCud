@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create post</title>
+  </head>
+  <body>
+    <form id="createPostForm">
+      <input type="text" id="postTitle" name="postTitle" />
+
+      <textarea name="postBody" id="postBody"></textarea>
+      <button class="button button--success" type="submit">
+        Create a post
+      </button>
+    </form>
+    <div>
+      <p id="status"></p>
+
+      <h2 id="newPostTitle"></h2>
+      <p id="newPostBody"></p>
+    </div>
+
+    <script src="global.js"></script>
+    <script src="create.js"></script>
+  </body>
+</html>
