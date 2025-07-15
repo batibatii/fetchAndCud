@@ -17,7 +17,7 @@ function createPost(e) {
       title: postTitle,
       body: postBody,
       userId: 1,
-    }),
+    }), 
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
     },
@@ -26,8 +26,22 @@ function createPost(e) {
     .then((json) => {
       // TODO: Show confirmation to the user on the screen that the post was created and the content of the post.
       console.log(json);
-      document.getElementById('status').innerText = 'Post is created successfully!';
 
-      document.getElementById('newPostTitle').innerText = json.title;
+      const statusContainer = document.getElementById('statusContainer');
+      statusContainer.classList.remove('hidden')
+
+      const postPreview = document.getElementById('postPreview');
+      postPreview.classList.remove('hidden');
+
+      const status = document.getElementById('status');
+      status.innerText = 'Post is created successfully!';
+
+
+      const newPostTitle = document.getElementById('newPostTitle');
+      newPostTitle.innerText = json.title;
+
+      const newPostBody = document.getElementById('newPostBody');
+      newPostBody.innerText = json.body;
+
     });
 }

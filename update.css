@@ -1,0 +1,72 @@
+.container {
+  width: 400px;
+  outline: none;
+  margin-top: 200px;
+}
+
+.title-input {
+  height: 38px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.634);
+  padding: 2px 8px;
+  color: #1a4a1c;
+    font-size: 16px;
+  font-weight:400;
+}
+
+.textarea-input {
+  height: 200px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  padding: 4px 8px;
+  background-color: rgba(255, 255, 255, 0.634);
+  box-shadow: 0 2px 0 hsla(0, 0, 100%, 0.1 5);
+  color: #1a4a1c;
+  font-size: 16px;
+  font-weight:400;
+  
+}
+
+.label {
+  color: #000000;
+  letter-spacing: 3px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 900;
+  font-size: 18px;
+}
+
+.update__button {
+  width: 100%;
+  padding: 12px 18px;
+  background-color: rgba(255, 255, 255, 0.634);
+  color: #1a4a1c;
+  border: none;
+  border-radius: 8px;
+  box-shadow: inset 4px 0 hsla(0, 100%, 100%, 0.45);
+  box-shadow: 0 1px 6px hsla(0, 0%, 0%, 0.5);
+  font-size: 16px;
+}
+
+.update__button:hover {
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 12px hsla(0, 0%, 0%, 0.4);
+}
+
+.gap--32 {
+  gap: 32px;
+}
+
+.gap--12 {
+  gap: 12px;
+}
+
+.gap--64{
+  gap: 64px;
+}
+

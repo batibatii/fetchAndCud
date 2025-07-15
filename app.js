@@ -1,4 +1,4 @@
-  /* 
+/* 
 CRUD - set of basic operations or functions that are commonly used in the context of database management and web applications to manage and manipulate data.
 C - create - POST method (has request body to transfer data)
 R - read - GET method (cannot have request body to send data to the server)
@@ -15,38 +15,93 @@ HTTP status codes are three-digit numbers that the server sends in response to a
 */
 
 document
- .getElementById('fetchAllPosts')
- .addEventListener('click', getPosts);
+  .getElementById('fetchAllPosts')
+  .addEventListener('click', getPosts);
 
 function getPosts() {
   fetch(URL)
-  .then((response) => response.json())
-  .then((json) => {
-    json.map(post => {
-      const div = document.createElement('div');
-      div.classList.add('post');
-      const h3 = document.createElement('h3');
-      h3.innerText = post.title;
+    .then((response) => response.json())
+    .then((json) => {
+      json.map(post => {
+        const iconHTML = `<button class="delete">
+  <svg xmlns="http://www.w3.org/2000/svg" 
+       width="24" height="24" viewBox="0 0 24 24">
+    <path d="M3 6v18h18v-18h-18zm5 14c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm5 0c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm5 0c0 .552-.448 1-1 1s-1-.448-1-1v-10c0-.552.448-1 1-1s1 .448 1 1v10zm4-18v2h-20v-2h5.711c.9 0 1.631-1.099 1.631-2h5.315c0 .901.73 2 1.631 2h5.712z"/>
+  </svg>
+</button>`
 
-      const p = document.createElement('p');
-      p.innerText = post.body;
+        const updateButtonHTML = `<button class="update-button">UPDATE
+</button>`
 
-      div.appendChild(h3);
-      div.appendChild(p);
-
-      // TODO: add update post <a> element with a link to update.html page containing a form element. Add query parameter (?id=post.id) to the url
+        const outerWrapper = document.createElement('div');
+        outerWrapper.classList.add('post-wrapper', 'flex');
 
 
-      // TODO: add delete post button with event listener to call deletePost (make sure to provide correct post id to it).
+        const postDiv = document.createElement('div');
+        postDiv.classList.add('post', 'flex', 'justify-between');
 
-      const container = document.getElementById('container');
-      container.appendChild(div);
-    })
-  });
+        const contentWrapper = document.createElement('div');
+        contentWrapper.classList.add('flex', 'flex-col', 'gap--8', 'wrapper')
+
+        const h3 = document.createElement('h3');
+        h3.innerText = post.title;
+        h3.classList.add('post-title')
+
+        const p = document.createElement('p');
+        p.innerText = post.body;
+        p.classList.add('post-body');
+
+        const iconContainer = document.createElement('div');
+        const updateButtonContainer = document.createElement('div');
+
+
+        postDiv.appendChild(contentWrapper);
+        contentWrapper.appendChild(h3);
+        contentWrapper.appendChild(p);
+        postDiv.appendChild(iconContainer);
+
+        outerWrapper.appendChild(postDiv);
+        outerWrapper.appendChild(updateButtonContainer);
+
+        // TODO: add update post <a> element with a link to update.html page containing a form element. Add query parameter (?id=post.id) to the url
+
+        // TODO: add delete post button with event listener to call deletePost (make sure to provide correct post id to it).
+
+        const container = document.getElementById('container');
+        container.appendChild(outerWrapper);
+        const heading = document.getElementById('heading')
+        const buttonContainer = document.getElementById('buttonContainer');
+        heading.classList.remove('hidden');
+        buttonContainer.classList.remove('items-center', 'min-vh');
+        iconContainer.classList.add('icon-container');
+        iconContainer.innerHTML = iconHTML;
+        updateButtonContainer.classList.add('update-button-container');
+        updateButtonContainer.innerHTML = updateButtonHTML;
+      });
+
+      showCloseButton();
+    });
 }
 
-function getPostById() {}
+function showCloseButton() {
 
-function updatePost() {}
+  let closeButton = document.getElementById('closeButton');
 
-function deletePost() {}
+  if (!closeButton) {
+
+    closeButton = document.createElement('button');
+    closeButton.id = 'closeButton';
+    closeButton.className = 'close-button';
+
+    const container = document.getElementById('container');
+    container.appendChild(closeButton);
+  }
+  
+  closeButton.style.display = 'flex';
+}
+
+function getPostById() { }
+
+function updatePost() { }
+
+function deletePost() { }

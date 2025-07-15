@@ -1,0 +1,222 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+}
+
+.heading {
+  margin: 40px 0 0 0;
+  text-shadow: 1px 1px 2px rgb(0, 0, 0), -1px -1px 1px rgba(0, 0, 0, 0);
+  letter-spacing: 3px;
+  font-weight: 600;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #070707;
+  font-size: 32px;
+}
+
+.button {
+  padding: 10px 20px;
+  text-align: center;
+  color: #1a4a1c;
+  border: none;
+  font-size: 48px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  margin-top: 80px;
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  line-height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  word-spacing: 2%;
+  box-shadow: inset 2px 0 hsla(0, 100%, 100%, 0.45);
+  box-shadow: 0 1px 3px hsla(0, 0%, 0%, 0.5);
+}
+
+.button--success {
+  background-color: rgba(255, 255, 255, 0.634);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8),
+    /* Dark shadow below/right */ -1px -1px 1px rgba(255, 255, 255, 0.3); /* Light highlight above/left */
+}
+
+.button--success:hover {
+  background-color: #307332;
+  color: rgb(255, 255, 255);
+  transition: all 0.4s ease-in-out;
+}
+
+.arrow-pad {
+  padding-bottom: 22px;
+  padding-left: 19px;
+}
+
+.plus-pad {
+  padding-top: 15px;
+  padding-left: 20px;
+}
+
+.close-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #ff5f57;
+  border: 1px solid #e0443e;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.close-button:hover {
+  background-color: #ff4742;
+  transform: scale(1.05);
+}
+
+.close-button::before {
+  content: "×";
+  color: #4a0000;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1;
+  transition: opacity 0.2s ease;
+}
+
+.under__text {
+  color: rgb(255, 255, 255);
+  letter-spacing: 3px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 600;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8),
+    -1px -1px 1px rgba(255, 255, 255, 0.3);
+  margin-left: 5px;
+}
+
+.post-wrapper {
+  align-items: stretch;
+  gap: 8px;
+  margin-bottom: 20px;
+  margin-top: 40px;
+}
+
+.post {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 4px 6px hsla(0, 0%, 0%, 0.475),
+    0 5px 15px hsla(0, 0%, 0%, 0.516);
+  flex: 1;
+}
+
+h3 {
+  max-width: 400px;
+}
+
+.post-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #052103;
+  margin: 0;
+}
+
+.post-body {
+  color: #666;
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+}
+
+.wrapper {
+  max-width: 416px;
+  padding-right: 2;
+}
+
+.icon {
+  color: #7a0916;
+}
+
+.icon-container {
+  width: 32px;
+}
+
+.delete {
+  cursor: pointer;
+  background-color: rgb(127, 127, 127);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  border: none;
+  padding: 0;
+}
+
+.delete:hover {
+  background-color: #7a0916;
+}
+
+.delete svg {
+  width: 18px;
+  height: 18px;
+  fill: white;
+}
+
+.delete:hover svg {
+  fill: white;
+}
+
+.update-button-container {
+  display: flex;
+  align-items: stretch;
+}
+
+.update-button {
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 0;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  box-shadow: 0 4px 6px hsla(0, 0%, 0%, 0.394),
+    0 5px 12px hsla(0, 0%, 0%, 0.516);
+}
+
+.update-button:hover {
+  background-color: #1976d2;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px hsla(0, 0%, 0%, 0.4);
+}
+
+.gap--8 {
+  gap: 8px;
+}
+
+.gap--96 {
+  gap: 96px;
+}
+
+.gap--200 {
+  gap: 300px;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create post</title>
+    <link rel="stylesheet" href="global.css" />
+    <link rel="stylesheet" href="update.css" />
+  </head>
+  <body>
+    <div class="flex flex-col items-center gap--64">
+    <div class="flex justify-center">
+      <form id="createPostForm" class="flex flex-col gap--32 container">
+        <div class="flex flex-col gap--12">
+          <label class="label" for="title"><strong>Title</strong></label>
+          <input
+            type="text"
+            id="postTitle"
+            name="postTitle"
+            class="title-input"
+          />
+        </div>
+        <div class="flex flex-col gap--12">
+          <label class="label" for="Content"><strong>Content</strong></label>
+          <textarea
+            name="postBody"
+            id="postBody"
+            class="textarea-input"
+          ></textarea>
+        </div>
+        <div>
+          <button class="update__button" type="submit">Update a post</button>
+        </div>
+      </form>
+    </div>
+    <div id="statusContainer">
+      <p id="status"></p>
+
+      <h2 id="newPostTitle"></h2>
+      <p id="newPostBody"></p>
+    </div>
+</div>
+    <script src="global.js"></script>
+    <script src="update.js"></script>
+  </body>
+</html>
