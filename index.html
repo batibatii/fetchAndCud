@@ -1,35 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Posts</title>
     <link rel="stylesheet" type="text/css" href="global.css" />
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="index.css" />
   </head>
-  <body class="flex flex-col items-center">
-    <h1 id="heading" class="heading hidden">POSTS</h1>
-    <div id="buttonContainer" class=" flex items-center min-vh">
-      <nav class="flex justify-center gap--96">
-        <div class="flex flex-col items-center">
-          <a href="./create.html" class="button button--success plus-pad">+</a>
-          <span class="under__text">CREATE</span>
-        </div>
-        <div id="" class="flex flex-col items-center">
-          <button id="fetchAllPosts" class="button button--success arrow-pad">↓</button>
-          <span class="under__text">FETCH</span>
-             
-
-        
-      </nav>
-    </div>
-    <div class="container" id="container">
-      <!--
-      Fetch all posts and display them on the page. - done
-      For every post, add a button to update the post and delete a post.
-      When the update button is clicked, redirect user to the update post page with a form to update the post.
-      When the delete button is clicked, send request to delete the post.
-      Add a button to create a new post. When the button is clicked, redirect user to the create post page with a form to create a new post.
-     
-    --></div>
+  <body>
+    <main class="flex flex-col items-center">
+      <h1 id="heading" class="heading hidden">POSTS</h1>
+      <div id="buttonContainer" class="flex items-center min-vh">
+        <nav class="flex justify-center gap--96">
+          <div class="flex flex-col items-center">
+            <a href="./create.html" class="button button--success plus-pad" aria-label="create post"
+              >+</a
+            >
+            <span class="under__text">CREATE</span>
+          </div>
+          <div id="" class="flex flex-col items-center">
+            <button id="fetchAllPosts" class="button button--success arrow-pad" aria-label="fetch all posts from server">
+              ↓
+            </button>
+            <span class="under__text">FETCH</span>
+          </div>
+        </nav>
+      </div>
+      <div class="container" id="container"></div>
+    </main>
     <script src="global.js"></script>
     <script src="app.js"></script>
   </body>

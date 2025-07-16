@@ -1,4 +1,3 @@
-
 document
   .getElementById('createPostForm')
   .addEventListener('submit', createPost);
@@ -9,7 +8,26 @@ function createPost(e) {
 
   const postBody = document.getElementById('postBody').value;
 
-  // TODO: add input validation for  both inputs
+  const titleRegex = /^(?!.*[<>])[\p{L}\p{N}\p{P} ]{3,100}$/u
+  const contentRegex = /^[^<>]{20,1000}$/;
+
+  if (!titleRegex.test(postTitle)) {
+    const titleError = document.getElementById('titleError');
+    titleError.textContent = 'Input is invalid';
+    return;
+  } else {
+    titleError.textContent = '';
+  }
+
+  if (!contentRegex.test(postBody)) {
+    const textareaError = document.getElementById('textareaError');
+    textareaError.textContent = ' Input is invalid or minimum length required: 20 characters.';
+    return;
+  } else {
+    textareaError.textContent = '';
+  }
+
+
 
   fetch(URL, {
     method: 'POST',
@@ -17,14 +35,14 @@ function createPost(e) {
       title: postTitle,
       body: postBody,
       userId: 1,
-    }), 
+    }),
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
     },
   })
     .then((response) => response.json())
     .then((json) => {
-      // TODO: Show confirmation to the user on the screen that the post was created and the content of the post.
+
       console.log(json);
 
       const statusContainer = document.getElementById('statusContainer');
@@ -36,7 +54,6 @@ function createPost(e) {
       const status = document.getElementById('status');
       status.innerText = 'Post is created successfully!';
 
-
       const newPostTitle = document.getElementById('newPostTitle');
       newPostTitle.innerText = json.title;
 
@@ -45,3 +62,4 @@ function createPost(e) {
 
     });
 }
+

@@ -8,52 +8,77 @@
     <link rel="stylesheet" href="create.css" />
   </head>
   <body>
-    <div class="page-container">
-      <a href="./index.html" class="back-link">← BACK TO POSTS</a>
-      
-      <h1 class="page-heading">CREATE NEW POST</h1>
-      
-      <div class="form-container">
-        <form id="createPostForm" class="flex flex-col gap--32">
-          <div class="form-group">
-            <label class="label" for="postTitle">TITLE</label>
-            <input
-              type="text"
-              id="postTitle"
-              name="postTitle"
-              class="title-input"
-              placeholder="Enter post title..."
-            />
-          </div>
-          
-          <div class="form-group">
-            <label class="label" for="postBody">CONTENT</label>
-            <textarea
-              name="postBody"
-              id="postBody"
-              class="textarea-input"
-              placeholder="Write your post content here..."
-            ></textarea>
-          </div>
-          
-          <div>
-            <button class="create__button" type="submit">Create Post</button>
-          </div>
-        </form>
-      </div>
-      
-      <div id="statusContainer" class="status-container hidden" >
-        <div class="success-message">
-          <p id="status"></p>
+    <main>
+      <div class="page-container">
+        <a href="./index.html" id="backToHome" class="back-link"
+          >← BACK TO HOME</a
+        >
+        <h1 class="page-heading">CREATE NEW POST</h1>
+        <div class="form-container">
+          <form id="createPostForm" class="flex flex-col gap--32">
+            <div>
+              <div class="form-group">
+                <label class="label" for="postTitle">TITLE</label>
+                <input
+                  type="text"
+                  id="postTitle"
+                  name="postTitle"
+                  class="title-input"
+                  placeholder="Enter post title..."
+                />
+              </div>
+              <div id="titleError" class="title-error" aria-live="polite"></div>
+            </div>
+            <div>
+              <div class="form-group">
+                <label class="label" for="postBody">CONTENT</label>
+                <textarea
+                  name="postBody"
+                  id="postBody"
+                  class="textarea-input"
+                  placeholder="Write your post content here..."
+                ></textarea>
+                <div
+                  id="textareaError"
+                  class="textarea-error"
+                  aria-live="polite"
+                ></div>
+              </div>
+            </div>
+
+            <div>
+              <button
+                class="create__button"
+                type="submit"
+                aria-label="Create post"
+              >
+                Create Post
+              </button>
+            </div>
+          </form>
         </div>
-        
-        <div id="postPreview" class="created-post-preview hidden">
-          <p class="preview-label"></p>
-          <h2 id="newPostTitle" class="newPost-title"></h2>
-          <p id="newPostBody" class="newPost-body"></p>
+
+        <div
+          id="statusContainer"
+          class="status-container hidden"
+          aria-live="polite"
+        >
+          <div class="success-container">
+            <p id="status" class="status-message"></p>
+          </div>
+
+          <div
+            id="postPreview"
+            class="created-post-preview hidden"
+            aria-live="polite"
+          >
+            <p class="preview-label"></p>
+            <h2 id="newPostTitle" class="newPost-title"></h2>
+            <p id="newPostBody" class="newPost-body"></p>
+          </div>
         </div>
       </div>
-    </div>
+    </main>
     <script src="global.js"></script>
     <script src="create.js"></script>
   </body>

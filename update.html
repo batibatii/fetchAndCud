@@ -8,38 +8,56 @@
     <link rel="stylesheet" href="update.css" />
   </head>
   <body>
-    <div class="flex flex-col items-center gap--64">
-    <div class="flex justify-center">
-      <form id="createPostForm" class="flex flex-col gap--32 container">
-        <div class="flex flex-col gap--12">
-          <label class="label" for="title"><strong>Title</strong></label>
-          <input
-            type="text"
-            id="postTitle"
-            name="postTitle"
-            class="title-input"
-          />
+    <main>
+      <div class="page-container">
+        <a href="./index.html" id="backToHome" class="back-link"
+          >← BACK TO HOME</a
+        > 
+        <h1 class="page-heading">UPDATE POST</h1>
+        <div class="form-container">
+          <form id="updatePostForm" class="flex flex-col gap--32">
+            <div>
+              <div class="form-group">
+                <label class="label" for="postTitle">TITLE</label>
+                <input
+                  type="text"
+                  id="postTitle"
+                  name="postTitle"
+                  class="title-input"
+                  placeholder="Enter post title..."
+                />
+              </div>
+              <div id="titleError" class="title-error" aria-live="polite"></div>
+            </div>
+            <div>
+              <div class="form-group">
+                <label class="label" for="postBody">CONTENT</label>
+                <textarea
+                  name="postBody"
+                  id="postBody"
+                  class="textarea-input"
+                  placeholder="Write your post content here..."
+                ></textarea>
+                <div id="textareaError" class="textarea-error" aria-live="polite"></div>
+              </div>
+            </div>
+            <div>
+              <button class="update__button" type="submit" aria-label="Update post">Update Post</button>
+            </div>
+          </form>
         </div>
-        <div class="flex flex-col gap--12">
-          <label class="label" for="Content"><strong>Content</strong></label>
-          <textarea
-            name="postBody"
-            id="postBody"
-            class="textarea-input"
-          ></textarea>
+        <div id="statusContainer" class="status-container hidden" aria-live="polite">
+          <div class="success-container">
+            <p id="status" class="status-message"></p>
+          </div>
+          <div id="postPreview" class="created-post-preview hidden">
+            <p class="preview-label"></p>
+            <h2 id="newPostTitle" class="newPost-title"></h2>
+            <p id="newPostBody" class="newPost-body"></p>
+          </div>
         </div>
-        <div>
-          <button class="update__button" type="submit">Update a post</button>
-        </div>
-      </form>
-    </div>
-    <div id="statusContainer">
-      <p id="status"></p>
-
-      <h2 id="newPostTitle"></h2>
-      <p id="newPostBody"></p>
-    </div>
-</div>
+      </div>
+    </main>
     <script src="global.js"></script>
     <script src="update.js"></script>
   </body>
